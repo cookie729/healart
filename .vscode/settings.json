@@ -1,0 +1,6 @@
+{
+  "intelephense.environment.includePaths": [
+    "/Users/cookie./Local Sites/healart/app/public/wp-includes",
+    "/Users/cookie./Local Sites/healart/app/public/wp-admin"
+  ]
+}
