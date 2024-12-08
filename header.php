@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html lang="ja">
+<!-- WordPress で設定している言語を反映 -->
+<html <?php language_attributes(); ?>>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://unpkg.com/destyle.css@2.0.2/destyle.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
-  <link rel="stylesheet" href="style.css">
+  <!-- アイコンの設定 -->
+  <link 
+    rel="icon" 
+    href="<?php echo esc_url(get_theme_file_uri('/images/leaf-left.svg')); ?>"
+    type="image/svg+xml"
+  >
+  <!-- 
+    機能を追加する function.php や、css, js を読み込むために入れる
+    style.css を読み込んでくれる
+  -->
+  <?php wp_head(); ?>
 </head>
-<body>
+<!-- body の php タグはページ毎に異なるスタイルを設定する -->
+<body <?php body_class(); ?>>
+  <!-- 必ず必要なコード、,js 等を出力 -->
+  <?php wp_body_open(); ?>
   <header class="site-header">
     <div class="wrapper">
+    <?php hello(); ?>
+
       <h1 class="site-title">
-        <a href="#">
+        <!-- home_url で HP にリンクさせる -->
+        <a href="<?php echo esc_url(home_url('/')); ?>">
           <h2>LUX</h2>
+          <!-- 画像の設定 -->
+          <img 
+            class="site-logo" 
+            src="<?php echo esc_url(get_theme_file_uri('/images/logo.svg')); ?>" 
+            alt="<?php bloginfo('name'); ?>"
+          >
         </a>
       </h1>
-      <p class="site-description">キャンプやアウトドア</p>
+      <!-- 管理画面の「設定」→「一般」で設定したキャッチフレーズを表示する -->
+      <p class="site-description"><?php bloginfo('description'); ?></p>
     </div>
   </header>
   <nav class="primary-navigation wrapper">
