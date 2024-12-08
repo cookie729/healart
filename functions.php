@@ -19,14 +19,20 @@ function add_files() {
 function hello() {
   echo 'Hello World!';
 }
-// add_files() を呼び出す
-add_action('wp_enqueue_scripts', 'add_files');
-
-
 function theme_setup() {
   // title タグ
   // wordpress が用意している機能を有効化するための add_theme_support()
   add_theme_support('title-tag');
+
+  // メニュー(メニューを有効化)
+  register_nav_menus(
+    array(
+      'main-menu' => 'メインメニュー',
+    )
+  );
 }
+
+
 // add_files() を呼び出す
 add_action('after_setup_theme', 'theme_setup');
+add_action('wp_enqueue_scripts', 'add_files');

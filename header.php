@@ -42,13 +42,16 @@
   </header>
   <nav class="primary-navigation wrapper">
     <button class="btn-menu">メニュー</button>
-    <ul class="menu-wrapper">
-      <li><a href="#"></a></li>
-      <li><a href="#">オーガニックフード</a></li>
-      <li><a href="#">インテリア</a></li>
-      <li><a href="#">アウトドアグッズ</a></li>
-      <li><a href="#">ヒーリング</a></li>
-    </ul>
+    <!-- functions.php の main-menu で WordPress で設定したメニューが表示 -->
+    <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'main-menu',
+          'container' => '',
+          'menu_class' => 'menu-wrapper'
+        )
+      );
+    ?>
   </nav>
   
 </body>
