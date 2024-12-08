@@ -9,23 +9,11 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/destyle.css@2.0.2/destyle.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
   <footer class="site-footer">
-    <p              
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    class="copyright">&copy; 2024 LUX</p>
+    <p class="copyright">&copy; 2024 LUX</p>
   </footer>
   <script src="js/script.js"></script>
 </body>
